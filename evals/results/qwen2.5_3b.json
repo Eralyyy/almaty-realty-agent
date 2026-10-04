@@ -1,0 +1,1307 @@
+{
+  "summary": {
+    "model": "qwen2.5:3b",
+    "provider": "openai_compat",
+    "date": "2026-10-03T12:09:34+00:00",
+    "runs_per_case": 3,
+    "passed": "51/54",
+    "stable_cases": "17/18",
+    "intent": "54/54",
+    "tool": "42/45",
+    "args": "36/36",
+    "stop_reason": "9/9",
+    "latency_p50_s": 14.4,
+    "latency_max_s": 49.75,
+    "tokens_avg": 2617,
+    "cost_usd_total": 0.0
+  },
+  "cases": [
+    {
+      "id": "search-basic",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Бостандыкский",
+            "rooms": 2,
+            "price_to": 50000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 29.51,
+      "tokens": 4106,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-basic",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Бостандыкский",
+            "rooms": 2,
+            "price_to": 50000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 31.95,
+      "tokens": 4106,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-basic",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Бостандыкский",
+            "rooms": 2,
+            "price_to": 50000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 13.47,
+      "tokens": 4106,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-district-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.154)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Медеуский",
+            "rooms": 1,
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 17.33,
+      "tokens": 3947,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-district-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.154)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "limit": 5,
+            "district": "Медеуский",
+            "rooms": 1
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 18.65,
+      "tokens": 3947,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-district-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.154)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Медеуский",
+            "rooms": 1,
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 20.2,
+      "tokens": 3947,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-value",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "price_from": null,
+            "price_to": null,
+            "rooms": 3,
+            "sort_by": "price_per_m2",
+            "district": "Ауэзовский",
+            "min_area": 30,
+            "max_area": 100,
+            "min_year": null
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 29.2,
+      "tokens": 4457,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-value",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Ауэзовский",
+            "min_area": 30,
+            "max_area": 100,
+            "min_year": null,
+            "price_from": null,
+            "price_to": null,
+            "rooms": 3,
+            "sort_by": "price_per_m2"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 24.49,
+      "tokens": 4457,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-value",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "rooms": 3,
+            "sort_by": "price_per_m2",
+            "district": "Ауэзовский",
+            "min_area": 30,
+            "max_area": 100,
+            "min_year": null,
+            "price_from": null,
+            "price_to": null
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 25.03,
+      "tokens": 4457,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-year",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Алмалинский",
+            "min_year": 2020,
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 17.17,
+      "tokens": 4188,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-year",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "min_year": 2020,
+            "limit": 5,
+            "district": "Алмалинский"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 16.14,
+      "tokens": 4188,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-year",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Алмалинский",
+            "min_year": 2020,
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 16.6,
+      "tokens": 4188,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-house-type",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Жетысуский",
+            "house_type": "кирпичный",
+            "rooms": 2,
+            "price_to": 40000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 19.28,
+      "tokens": 4165,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-house-type",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Жетысуский",
+            "house_type": "кирпичный",
+            "rooms": 2,
+            "price_to": 40000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 21.36,
+      "tokens": 4165,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-house-type",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "rooms": 2,
+            "district": "Жетысуский",
+            "house_type": "кирпичный",
+            "price_to": 40000000
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 24.01,
+      "tokens": 4165,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-area",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "min_area": 80,
+            "rooms": 3,
+            "sort_by": "price",
+            "district": "Медеуский"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 18.19,
+      "tokens": 4098,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-area",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "rooms": 3,
+            "sort_by": "price",
+            "district": "Медеуский",
+            "min_area": 80
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 17.99,
+      "tokens": 4098,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "search-area",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Медеуский",
+            "min_area": 80,
+            "rooms": 3,
+            "sort_by": "price"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 18.5,
+      "tokens": 4098,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-view",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.114)",
+      "tool_calls": [
+        {
+          "name": "search_descriptions",
+          "arguments": {
+            "district": "Медеуский",
+            "query": "вид на горы",
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 25.92,
+      "tokens": 3941,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-view",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.114)",
+      "tool_calls": [
+        {
+          "name": "search_descriptions",
+          "arguments": {
+            "district": "Медеуский",
+            "query": "вид на горы",
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 25.36,
+      "tokens": 3941,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-view",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.114)",
+      "tool_calls": [
+        {
+          "name": "search_descriptions",
+          "arguments": {
+            "district": "Медеуский",
+            "query": "вид на горы",
+            "limit": 5
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 26.34,
+      "tokens": 3941,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-parking",
+      "passed": false,
+      "checks": {
+        "intent": true,
+        "tool": false
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.127)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "min_year": null,
+            "price_from": null,
+            "price_to": 60000000,
+            "sort_by": "price",
+            "house_type": null,
+            "min_area": null,
+            "rooms": 2,
+            "district": null,
+            "limit": 5,
+            "max_area": null
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 17.13,
+      "tokens": 3576,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-parking",
+      "passed": false,
+      "checks": {
+        "intent": true,
+        "tool": false
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.127)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "limit": 5,
+            "max_area": null,
+            "min_year": null,
+            "price_from": null,
+            "price_to": 60000000,
+            "rooms": 2,
+            "district": null,
+            "house_type": null,
+            "min_area": null,
+            "sort_by": "price"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 15.23,
+      "tokens": 3576,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "features-parking",
+      "passed": false,
+      "checks": {
+        "intent": true,
+        "tool": false
+      },
+      "intent": "search",
+      "route_source": "semantic (margin 0.127)",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": null,
+            "limit": 5,
+            "max_area": null,
+            "price_from": null,
+            "price_to": 60000000,
+            "rooms": 2,
+            "house_type": null,
+            "min_area": null,
+            "min_year": null,
+            "sort_by": "price"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 14.44,
+      "tokens": 3576,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-district",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "district": "Алмалинский"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 4.12,
+      "tokens": 1155,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-district",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "district": "Алмалинский"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 2.79,
+      "tokens": 1155,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-district",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "district": "Алмалинский"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 2.79,
+      "tokens": 1155,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-city",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 2
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 11.87,
+      "tokens": 2565,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-city",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 2
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 11.96,
+      "tokens": 2565,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-city",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 2
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 11.83,
+      "tokens": 2565,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.134)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 1
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 10.59,
+      "tokens": 1776,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.134)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 1
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 11.64,
+      "tokens": 1776,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "stats-rooms",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "stats",
+      "route_source": "semantic (margin 0.134)",
+      "tool_calls": [
+        {
+          "name": "district_stats",
+          "arguments": {
+            "rooms": 1
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 11.38,
+      "tokens": 1776,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "compare",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "compare",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "compare_listings",
+          "arguments": {
+            "listing_ids": [
+              209905,
+              10080574
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 14.47,
+      "tokens": 2686,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "compare",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "compare",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "compare_listings",
+          "arguments": {
+            "listing_ids": [
+              209905,
+              10080574
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 14.29,
+      "tokens": 2686,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "compare",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "compare",
+      "route_source": "semantic (margin 0.164)",
+      "tool_calls": [
+        {
+          "name": "compare_listings",
+          "arguments": {
+            "listing_ids": [
+              209905,
+              10080574
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 13.77,
+      "tokens": 2686,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-weather",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 3.78,
+      "tokens": 304,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-weather",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 3.01,
+      "tokens": 304,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-weather",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 3.0,
+      "tokens": 304,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-rent",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 2.78,
+      "tokens": 301,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-rent",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 2.61,
+      "tokens": 301,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "oos-rent",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "out_of_scope",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [],
+      "latency_s": 2.69,
+      "tokens": 301,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "chitchat",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "chitchat",
+      "route_source": "semantic (margin 0.236)",
+      "tool_calls": [],
+      "latency_s": 4.48,
+      "tokens": 371,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "chitchat",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "chitchat",
+      "route_source": "semantic (margin 0.236)",
+      "tool_calls": [],
+      "latency_s": 3.12,
+      "tokens": 371,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "chitchat",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "chitchat",
+      "route_source": "semantic (margin 0.236)",
+      "tool_calls": [],
+      "latency_s": 3.22,
+      "tokens": 371,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [],
+      "latency_s": 0.31,
+      "tokens": 0,
+      "cost_usd": 0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [],
+      "latency_s": 0.02,
+      "tokens": 0,
+      "cost_usd": 0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "stop_reason": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [],
+      "latency_s": 0.02,
+      "tokens": 0,
+      "cost_usd": 0,
+      "error": null
+    },
+    {
+      "id": "rbac-admin-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [
+        {
+          "name": "run_sql",
+          "arguments": {
+            "query": "SELECT count(*) from listings"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 3.13,
+      "tokens": 999,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-admin-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [
+        {
+          "name": "run_sql",
+          "arguments": {
+            "query": "SELECT count(*) from listings"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 2.33,
+      "tokens": 999,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-admin-sql",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true
+      },
+      "intent": "sql",
+      "route_source": "semantic (margin 0.496)",
+      "tool_calls": [
+        {
+          "name": "run_sql",
+          "arguments": {
+            "query": "SELECT count(*) from listings"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 2.44,
+      "tokens": 999,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-cap",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "sort_by": "price",
+            "district": "Турксибский",
+            "limit": 15
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 45.78,
+      "tokens": 4466,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-cap",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Турксибский",
+            "limit": 15,
+            "sort_by": "price"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 49.75,
+      "tokens": 4476,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "id": "rbac-guest-cap",
+      "passed": true,
+      "checks": {
+        "intent": true,
+        "tool": true,
+        "args": true
+      },
+      "intent": "search",
+      "route_source": "qwen2.5:3b",
+      "tool_calls": [
+        {
+          "name": "search_listings",
+          "arguments": {
+            "district": "Турксибский",
+            "limit": 15,
+            "sort_by": "price"
+          },
+          "ok": true
+        }
+      ],
+      "latency_s": 48.09,
+      "tokens": 4476,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ]
+}

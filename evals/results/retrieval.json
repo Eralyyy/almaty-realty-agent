@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "k": 5,
+    "embed_model": "paraphrase-multilingual",
+    "vector_weight": 0.4,
+    "rerank_model": "qwen2.5:3b",
+    "fulltext": {
+      "literal": 0.97,
+      "paraphrase": 0.53,
+      "all": 0.75,
+      "latency_ms": 177
+    },
+    "vector": {
+      "literal": 0.6,
+      "paraphrase": 0.5,
+      "all": 0.55,
+      "latency_ms": 424
+    },
+    "hybrid": {
+      "literal": 0.87,
+      "paraphrase": 0.47,
+      "all": 0.67,
+      "latency_ms": 193
+    },
+    "hybrid_weighted": {
+      "literal": 1.0,
+      "paraphrase": 0.53,
+      "all": 0.77,
+      "latency_ms": 185
+    },
+    "hybrid+rerank": {
+      "literal": 0.87,
+      "paraphrase": 0.43,
+      "all": 0.65,
+      "latency_ms": 12619
+    }
+  },
+  "queries": [
+    {
+      "query": "вид на горы",
+      "kind": "literal",
+      "fulltext": 1.0,
+      "vector": 0.2,
+      "hybrid": 0.8,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 1.0
+    },
+    {
+      "query": "панорама гор из окна",
+      "kind": "paraphrase",
+      "fulltext": 0.8,
+      "vector": 0.4,
+      "hybrid": 0.8,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 0.8
+    },
+    {
+      "query": "есть паркинг",
+      "kind": "literal",
+      "fulltext": 1.0,
+      "vector": 0.8,
+      "hybrid": 0.8,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 1.0
+    },
+    {
+      "query": "место для машины во дворе или под домом",
+      "kind": "paraphrase",
+      "fulltext": 0.2,
+      "vector": 0.2,
+      "hybrid": 0.0,
+      "hybrid_weighted": 0.2,
+      "hybrid+rerank": 0.0
+    },
+    {
+      "query": "рядом с метро",
+      "kind": "literal",
+      "fulltext": 0.8,
+      "vector": 1.0,
+      "hybrid": 1.0,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 1.0
+    },
+    {
+      "query": "недалеко от станции подземки",
+      "kind": "paraphrase",
+      "fulltext": 0.8,
+      "vector": 1.0,
+      "hybrid": 0.8,
+      "hybrid_weighted": 0.8,
+      "hybrid+rerank": 0.8
+    },
+    {
+      "query": "черновая отделка",
+      "kind": "literal",
+      "fulltext": 1.0,
+      "vector": 0.0,
+      "hybrid": 0.6,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 1.0
+    },
+    {
+      "query": "квартира без ремонта, голые стены",
+      "kind": "paraphrase",
+      "fulltext": 0.2,
+      "vector": 0.2,
+      "hybrid": 0.2,
+      "hybrid_weighted": 0.2,
+      "hybrid+rerank": 0.0
+    },
+    {
+      "query": "продаётся с мебелью и техникой",
+      "kind": "literal",
+      "fulltext": 1.0,
+      "vector": 0.8,
+      "hybrid": 1.0,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 0.6
+    },
+    {
+      "query": "можно сразу заезжать и жить",
+      "kind": "paraphrase",
+      "fulltext": 0.4,
+      "vector": 0.2,
+      "hybrid": 0.4,
+      "hybrid_weighted": 0.4,
+      "hybrid+rerank": 0.2
+    },
+    {
+      "query": "ипотека",
+      "kind": "literal",
+      "fulltext": 1.0,
+      "vector": 0.8,
+      "hybrid": 1.0,
+      "hybrid_weighted": 1.0,
+      "hybrid+rerank": 0.6
+    },
+    {
+      "query": "покупка в кредит через банк",
+      "kind": "paraphrase",
+      "fulltext": 0.8,
+      "vector": 1.0,
+      "hybrid": 0.6,
+      "hybrid_weighted": 0.6,
+      "hybrid+rerank": 0.8
+    }
+  ]
+}

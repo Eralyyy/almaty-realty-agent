@@ -1,0 +1,60 @@
+x-app-env: &app-env
+  DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+  REDIS_URL: redis://redis:6379/0
+  MCP_URL: http://mcp:8001/mcp
+  # Ollama runs on the host (Docker on macOS has no access to the Apple GPU)
+  LLM_BASE_URL: ${LLM_BASE_URL_DOCKER:-http://host.docker.internal:11434/v1}
+  OLLAMA_URL: ${OLLAMA_URL_DOCKER:-http://host.docker.internal:11434}
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16  # PostgreSQL 16 + pgvector
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Runs once, on the first start with an empty volume
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/002_rag.sql:/docker-entrypoint-initdb.d/02_rag.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  mcp:
+    build: .
+    command: ["python", "-m", "app.mcp_server"]
+    profiles: ["app"]
+    env_file: .env
+    environment:
+      <<: *app-env
+      MCP_HOST: 0.0.0.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build: .
+    profiles: ["app"]
+    env_file: .env
+    environment: *app-env
+    ports:
+      - "8000:8000"
+    depends_on:
+      mcp:
+        condition: service_started
+      redis:
+        condition: service_started
+    restart: on-failure
+
+volumes:
+  pgdata:

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+/*.html
+logs/
+evals/results/traces.jsonl
